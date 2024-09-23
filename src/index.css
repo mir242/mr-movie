@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    
+        font-family: "Sofadi One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        color: aliceblue;
+    
+  
+
+}
+        
+background: linear-gradient(to left , #b79f9f,#260546 , #011b1f);
