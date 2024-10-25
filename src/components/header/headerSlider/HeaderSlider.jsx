@@ -1,17 +1,30 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import MovieCard from '../../Movies/MovieCard';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
-export default function HeaderSlider({ setBg }) {
+export default function HeaderSlider({setBg}) {
+  const [movies, setMovies] = useState([]);
 
-  function getImage(Number) {
-    return `src/components/image/ask${Number}.jpg`
+  async function loadMovies() {
+    const { data } = await axios.get(
+      "https://api.themoviedb.org/3/movie/popular?api_key=af4c9f1e80dff26c7cbecc443e535d19&language=en-US&page=1"
+    );
+
+    setMovies(data.results);
   }
+
+  useEffect(() => {
+    loadMovies();
+  }, []);
+
+
 
   return (
 
-    <div className="mt-10 gap-9 ">
+    <div className="mt-8 rounded-2xl ">
       <Swiper
         breakpoints={{
 
@@ -19,7 +32,7 @@ export default function HeaderSlider({ setBg }) {
             slidesPerView: 2,
             spaceBetween: 20,
           },
-      
+
           768: {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -35,18 +48,20 @@ export default function HeaderSlider({ setBg }) {
 
 
         modules={[Autoplay]}
-        autoplay={{ delay: 1800 }}
+        autoplay={{ delay: 1500 }}
         loop >
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((Number) =>
-          <SwiperSlide key={Number}>
-<div onMouseOver={(e) => setBg(getImage(Number))}>
-  <MovieCard img={getImage(Number)} />
-</div>
-
+        {movies.map((movie) => (
+          <SwiperSlide key={movie.id}>
+            <div
+              onMouseOver={() =>
+                setBg(`https://image.tmdb.org/t/p/w780/${movie.backdrop_path}`)}>
+              <h1>{ }</h1>
+              <MovieCard
+            movie={movie}
+              />
+            </div>
           </SwiperSlide>
-
-        )}
-
+        ))}
       </Swiper>
     </div>
 

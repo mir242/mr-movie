@@ -21,8 +21,8 @@ export default function MoviesListSlider({ movies }) {
         },
       }}
       modules={[Autoplay]}
-      autoplay={{ delay: 500 }}
-    centeredSlides
+      autoplay={{ delay: 3000 }}
+      centeredSlides
       loop
     >
       {movies.map((img) => (

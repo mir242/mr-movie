@@ -1,27 +1,40 @@
 import { useState } from 'react'
 import Navigation from './Navigation';
-import SearchBox from './headerSlider/SearchBox';
+import SearchBox from './searchBox/SearchBox';
 import FollowUs from '../FollowUs';
 import HeaderSlider from './headerSlider/HeaderSlider';
+import { useLocation } from 'react-router-dom';
 
 
 export default function Header() {
-  const [bg, setBg] = useState('./ask1.jpg');
+  const location = useLocation();
+  const [bg, setBg] = useState("src/components/image/ask14.jpg");
+
+
 
   return (
-    <header className=' transition-all duration-500  bg-cover bg-center pd-8 md:py-8'
+    <header
+      className={`transition-all duration-500  bg-cover bg-center pd-8 md:py-8 
+         ${location.pathname !=='/' ? 'h-[600px]' : ""
+         }`}
       style={{
-        backgroundImage: ` linear-gradient(to right, rgb(106 84 67 / 66%), rgb(36 3 69 / 88%), rgb(4 85 98 / 70%)), url('${bg}') `,
+        backgroundImage: ` linear-gradient(to top, rgb(136 145 94 / 30%), rgb(3 41 69 / 80%), rgb(0 0 0 / 100%)), url('${bg}') `,
       }}>
 
 
-<Navigation />
+      <Navigation />
 
-      <div className='container'>
-        
+      <div className='container '>
+
         <SearchBox />
-        <FollowUs />
-        <HeaderSlider setBg={setBg} />
+
+<div className= {`${location.pathname !== '/' ? 'hidden':""}`}>
+  <FollowUs />
+            <HeaderSlider setBg={setBg} />
+</div>
+
+       
+    
       </div>
     </header>
   );
