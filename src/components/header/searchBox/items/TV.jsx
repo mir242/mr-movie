@@ -10,8 +10,8 @@ export default function TV({ item }) {
 <div className='flex gap-3 items-center text-lg  '>
       <img src={item.poster_path ? imgUrl(item.poster_path, "w92") : '/movie.jpg'} alt="" className='object-cover w-14 h-14 rounded-2xl' />
       <p>{item.name}</p>
-
-    </div>
+ 
+ </div>
 
     </Link>
 

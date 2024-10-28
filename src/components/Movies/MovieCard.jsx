@@ -7,7 +7,7 @@ export default function MovieCard({ movie,type='movie' ,imgSize="w780" }) {
 
       
     return (
-        <Link to={`/${type==='movie'? 'movies' :"tv" }/${movie.id}`}>
+        <Link to={`/${type==='movie'? 'movies' :"TV" }/${movie.id}`}>
             <div className='bg-gray-400 aspect-[2/3] relative  rounded-l  overflow-hidden'>
                 <img src={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`} className=' object-cover w-full h-full  ' alt="" />
 
@@ -33,7 +33,7 @@ export default function MovieCard({ movie,type='movie' ,imgSize="w780" }) {
 
             </div>
 
-
+        
         </Link>
 
 

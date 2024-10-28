@@ -7,6 +7,7 @@ import Movie from "./components/pages/movie";
 import UserProvider from "./context/UserContext";
 import Profile from "./components/pages/Profile";
 import SignUp from "./components/pages/SignUp";
+import TV from "./components/pages/TV";
 
 export const router = createBrowserRouter([
     {
@@ -27,8 +28,8 @@ export const router = createBrowserRouter([
                 element: <Movies />,
             },
             {
-                path: '/tv',
-                element: <h1>this is  tv pages</h1>,
+                path: '/tv/:id',
+                element: <TV />,
             },
             {
                 path: '/People',
@@ -46,10 +47,10 @@ export const router = createBrowserRouter([
                 element: <Login />,
             },
 
-{
-    path:'/signup',
-    element :<SignUp/>
-},
+            {
+                path: '/signup',
+                element: <SignUp />
+            },
 
 
 
@@ -57,7 +58,7 @@ export const router = createBrowserRouter([
                 path: '/profile',
                 element: <Profile />
             }
-       
+
 
 
         ],
