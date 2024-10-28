@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Home from "./components/pages/Home";
-import Movies from "./components/pages/movies";
+import Movies from "./components/pages/Movies";
 import Login from "./components/pages/Login";
 import Movie from "./components/pages/movie";
 import UserProvider from "./context/UserContext";
