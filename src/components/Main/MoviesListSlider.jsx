@@ -1,12 +1,39 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import MovieCard from '../Movies/MovieCard';
+import { useEffect, useState } from 'react';
+import { fench } from '../../services/fench';
 
 
-export default function MoviesListSlider({ movies }) {
+export default function MoviesListSlider({ type, activTab }) {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await fench(`${type}/${activTab}`);
+
+
+      setMovies(data.results)
+
+    })();
+
+
+  }, [type, activTab])
+
+
+
+
   return (
+
     <Swiper
       breakpoints={{
+
+           // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 2,
+    },
+
         640: {
           slidesPerView: 2,
           spaceBetween: 5,
@@ -21,14 +48,16 @@ export default function MoviesListSlider({ movies }) {
         },
       }}
       modules={[Autoplay]}
-      autoplay={{ delay: 3000 }}
+      autoplay={{
+        delay: 800, reverseDirection: type == 'tv'}}
       centeredSlides
       loop
-    >
-      {movies.map((img) => (
 
-        <SwiperSlide key={img}>
-          <MovieCard img={img} />
+    >
+      {movies.map((movie) => (
+
+        <SwiperSlide key={movie.id}>
+          <MovieCard movie={movie} imgSize="w342" type={type} />
         </SwiperSlide>
 
       ))}

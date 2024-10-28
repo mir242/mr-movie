@@ -1,22 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import movie from '../pages/Movie';
 
 
 
-export default function MovieCard({ movie }) {
+export default function MovieCard({ movie,type='movie' ,imgSize="w780" }) {
 
       
     return (
-        <Link to={`/movies/${movie.id}`}>
+        <Link to={`/${type==='movie'? 'movies' :"tv" }/${movie.id}`}>
             <div className='bg-gray-400 aspect-[2/3] relative  rounded-l  overflow-hidden'>
                 <img src={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`} className=' object-cover w-full h-full  ' alt="" />
 
                
 
 
-                <div className='flex flex-col justify-end absolute bottom-0 left-0 right-0 w-full h-full p-8 bg-gradient-to-b from-[#43640a53] to-[#181a45cc] hover:from-[#d781d40b] to-[#275741f6]  '>
-                    <h3>{movie.title}</h3>
+                <div className='flex flex-col justify-end absolute bottom-0 left-0 right-0 w-full h-full p-8 bg-gradient-to-t from-teal-950   to-pink-500 opacity-30 hover:opacity-0 transition-opacity duration-200'  >
+                    <h3>{movie.title ||movie.name}</h3>
                     <div className='flex gap-2 mt-2'>
                         <span className=' text-yellow-300'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star-half" viewBox="0 0 16 16">
@@ -26,8 +25,7 @@ export default function MovieCard({ movie }) {
 
 
                         </span>
-                        <span>{movie.vote_average
-                        } /10</span>
+                        <span>{movie.vote_average } /10</span>
 
 
                     </div>

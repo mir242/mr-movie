@@ -6,14 +6,15 @@ import Login from "./components/pages/Login";
 import Movie from "./components/pages/movie";
 import UserProvider from "./context/UserContext";
 import Profile from "./components/pages/Profile";
+import SignUp from "./components/pages/SignUp";
 
 export const router = createBrowserRouter([
     {
         element:
             (
-        <UserProvider>
-            <App />
-        </UserProvider>
+                <UserProvider>
+                    <App />
+                </UserProvider>
 
             ),
         children: [
@@ -45,11 +46,18 @@ export const router = createBrowserRouter([
                 element: <Login />,
             },
 
-
 {
-path: '/profile',
-element: <Profile/>
-}
+    path:'/signup',
+    element :<SignUp/>
+},
+
+
+
+            {
+                path: '/profile',
+                element: <Profile />
+            }
+       
 
 
         ],

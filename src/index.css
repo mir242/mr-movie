@@ -15,5 +15,7 @@ body{
 
 }
 .bg{
-        background-color: rgba(5, 2, 29, 0.938);
+
+        background: linear-gradient(to left, rgb(136 145 94 / 110%), rgb(3 41 69 / 110%), rgb(0 0 0 / 100%));
+
 }

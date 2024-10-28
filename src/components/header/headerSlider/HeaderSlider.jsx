@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
-export default function HeaderSlider({setBg}) {
+export default function HeaderSlider({ setBg }) {
   const [movies, setMovies] = useState([]);
 
   async function loadMovies() {
@@ -57,7 +57,7 @@ export default function HeaderSlider({setBg}) {
                 setBg(`https://image.tmdb.org/t/p/w780/${movie.backdrop_path}`)}>
               <h1>{ }</h1>
               <MovieCard
-            movie={movie}
+                movie={movie}
               />
             </div>
           </SwiperSlide>

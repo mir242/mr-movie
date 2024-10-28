@@ -79,7 +79,7 @@ export default function UserProvider({ children }) {
 
             setSession(session.data.session_id);
             localStorage.setItem("session", session.data.session_id);
-            navigate("/", {
+            navigate("/profile", {
                 replace: true,
 
             });
