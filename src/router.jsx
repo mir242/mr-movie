@@ -3,7 +3,7 @@ import App from "./App";
 import Home from "./components/pages/Home";
 import Movies from "./components/pages/Movies";
 import Login from "./components/pages/Login";
-import Movie from "./components/pages/movie";
+import Movie from "./components/pages/Movie";
 import UserProvider from "./context/UserContext";
 import Profile from "./components/pages/Profile";
 import SignUp from "./components/pages/SignUp";
