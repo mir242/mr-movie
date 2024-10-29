@@ -8,9 +8,9 @@ MrMovie یک پروژه وب است که با استفاده از React و Vite 
 
 ![صفحه اصلی MrMovie](src/upload/{80135B01-889B-4DC8-9333-CA55B63B9EA0}.png)
 ![صفحه جستجو](src/upload/{9314DA86-9C84-4C69-88C5-7B27E98E120C}.png)
-![صفحه کلیک داخل فیلم](https://github.com/your_username/your_repository/blob/main/uploads/searchpage.png)
+![صفحه کلیک داخل فیلم](src/upload/{C2A646F5-422C-4D20-8D77-8D321498A7EB}.png)
 ![اسکرین رکورد از دموی پروژه](src/upload/lv_0_۲۰۲۴۱۰۲۹۰۸۰۵۳۵.mp4)
-
+)
 
 
 [مشاهده دمو در نتلیفای](https://mr-movie.netlify.app)
